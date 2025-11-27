@@ -1,16 +1,159 @@
-# React + Vite
+# ResidentHub Frontend
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+A production-grade, framework-style React application for society management built with modern technologies.
 
-Currently, two official plugins are available:
+## 🚀 Tech Stack
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) (or [oxc](https://oxc.rs) when used in [rolldown-vite](https://vite.dev/guide/rolldown)) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+- **React 19** - Latest React with modern features
+- **TypeScript** - Type-safe development
+- **Vite** - Fast build tool and dev server
+- **Tailwind CSS** - Utility-first CSS framework
+- **React Router v7** - Client-side routing
+- **Zustand** - Lightweight state management
+- **Axios** - HTTP client with interceptors
+- **Supabase Auth** - Authentication service
+- **Firebase Storage** - File storage
+- **PWA** - Progressive Web App support
 
-## React Compiler
+## 📁 Project Structure
 
-The React Compiler is currently not compatible with SWC. See [this issue](https://github.com/vitejs/vite-plugin-react/issues/428) for tracking the progress.
+```
+src/
+├── api/              # API client and interceptors
+├── components/       # Reusable UI components
+│   ├── common/      # Common components (Button, Input, Modal, etc.)
+│   └── modules/     # Module-specific components
+├── config/          # Configuration files
+├── hooks/           # Custom React hooks
+├── layouts/         # Layout components
+├── pages/           # Page components
+│   ├── auth/       # Authentication pages
+│   ├── dashboard/  # Dashboard page
+│   ├── society/    # Society management
+│   ├── residents/  # Resident management
+│   ├── maintenance/# Maintenance & payments
+│   ├── complaints/ # Complaints management
+│   ├── notices/    # Notice board
+│   ├── profile/    # User profile
+│   └── audit/      # Audit logs
+├── router/          # Routing configuration
+├── services/        # External service integrations
+├── store/           # Zustand stores
+├── types/           # TypeScript type definitions
+└── utils/           # Utility functions
+```
 
-## Expanding the ESLint configuration
+## 🛠️ Setup
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+1. **Install dependencies:**
+   ```bash
+   npm install
+   ```
+
+2. **Configure environment variables:**
+   ```bash
+   cp .env.example .env
+   ```
+   Fill in your Supabase and Firebase credentials.
+
+3. **Start development server:**
+   ```bash
+   npm run dev
+   ```
+
+4. **Build for production:**
+   ```bash
+   npm run build
+   ```
+
+## 🔐 Authentication
+
+The app supports two authentication methods:
+- **Email/Password** - Traditional email-based login
+- **Phone/OTP** - OTP-based phone authentication
+
+User roles:
+- **ADMIN** - Full access to all features
+- **RESIDENT** - Limited access to resident features
+
+## 🎨 Features
+
+### ✅ Implemented
+
+- [x] Complete folder structure
+- [x] TypeScript configuration
+- [x] Tailwind CSS setup
+- [x] Authentication system (Login/Signup)
+- [x] Role-based access control (RBAC)
+- [x] Protected routes
+- [x] Zustand state management
+- [x] API layer with Axios interceptors
+- [x] Common UI components
+- [x] Dark/Light mode
+- [x] Responsive navigation (Navbar, Sidebar, BottomNav)
+- [x] PWA support
+- [x] Error boundary
+- [x] Loading states
+- [x] Module placeholders
+
+### 🚧 Module Placeholders
+
+All modules are scaffolded with:
+- Page components
+- Route definitions
+- Empty state components
+- Service file structure
+
+Ready for implementation:
+- Dashboard
+- Society Management
+- Resident Management
+- Maintenance & Payments
+- Complaints
+- Notice Board
+- Profile
+- Audit Log
+
+## 📱 PWA Features
+
+- Service worker for offline support
+- Install prompt
+- Manifest configuration
+- IndexedDB caching utility
+
+## 🎯 Path Aliases
+
+The project uses path aliases for cleaner imports:
+
+```typescript
+@components  → src/components
+@pages       → src/pages
+@api         → src/api
+@store       → src/store
+@hooks       → src/hooks
+@utils       → src/utils
+@services    → src/services
+@config      → src/config
+@layouts     → src/layouts
+@router      → src/router
+@types       → src/types
+```
+
+## 🔧 Development
+
+- **Linting:** `npm run lint`
+- **Formatting:** `npm run format`
+- **Type checking:** `npm run build` (includes TypeScript check)
+
+## 📦 Deployment
+
+The project is ready for deployment on Vercel:
+
+1. Push to your repository
+2. Connect to Vercel
+3. Add environment variables
+4. Deploy!
+
+## 📝 License
+
+MIT
